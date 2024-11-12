@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para a Praia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+        .container {
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #nao {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Vamos na praia amanhã?</h1>
+    <button id="sim" onclick="aceitou()">Sim</button>
+    <button id="nao" onmouseover="moverBotao()">Não</button>
+    <p id="mensagem" style="display:none; color: #333; font-weight: bold;"></p>
+</div>
+
+<script>
+    function aceitou() {
+        document.getElementById("mensagem").innerText = 
+            "Bom dia, não sei se está na aula, mas fico muito grato por ter aceitado ir comigo na praia por livre e espontânea vontade kkkk. Me encontre no metrô Jardim de Alah 12h caso não tenha aula, se não me encontre na praia P11.";
+        document.getElementById("mensagem").style.display = "block";
+        document.getElementById("sim").style.display = "none";
+        document.getElementById("nao").style.display = "none";
+    }
+
+    function moverBotao() {
+        const naoBtn = document.getElementById("nao");
+        const x = Math.random() * 200 - 100;
+        const y = Math.random() * 200 - 100;
+        naoBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+</script>
+
+</body>
+</html>
